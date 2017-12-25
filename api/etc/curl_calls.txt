@@ -1,0 +1,245 @@
+/* POST me */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","device_id":"ABC123","device_name":"Test device","first_name":"API","last_name":"Tester","email":"apitester@mine.com","password":"volunteer","category":1,"terms":true,"zip_code":"V9S 3Y0"}' https://app.navstone.com/me
+
+/* POST me/step2 */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123", "name":"API tester","screename":"apitester","birthdate":1,"sex":"M","instruments":[1,5],"genres":[3],"years_active":4,"commitment":2}' https://app.navstone.com/me/step2
+
+/* POST me/step3 */ (Upload image)
+curl -k --form client=bandmix --form key=bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7 --form country=CA --form token=c6fb640d771188cc3f9b065d3d5de8cc --form device_id=ABC123 --form image=@/home/luciano/Imágenes/Varias/IMG_0701.JPG https://app.navstone.com/me/step3
+
+/* POST me/step3 */ (Select avatar)
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","avatar":3}' https://app.navstone.com/me/step3
+
+/* POST me/step4 */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","referrer":10}' https://app.navstone.com/me/step4
+
+/* POST login */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","email":"lucianogarciabes@gmail.com","password":"volunteer","device_id":"ABC123","device_name":"Test device"}' https://app.navstone.com/login
+
+/* POST logout */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/logout
+
+/* GET listings */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","device_id":"ABC123","listings":["states","availability"]}' https://app.navstone.com/listings
+
+/* GET me */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me
+
+/* PATCH me */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","contact_name":"API test","screename":"luciano43596","sex":"M","birthdate":-68400,"state":5,"city":"Toronto","zip_code":"M3H 6A7","commitment":1,"years_active":3,"instruments":[16,22],"genres":[9]}' https://app.navstone.com/me
+
+/* PATCH me/account_type */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","account_type":2}' https://app.navstone.com/me/account_type
+
+/* POST me/image */ (Upload image)
+curl -k --form client=bandmix --form key=bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7 --form country=CA --form token=c6fb640d771188cc3f9b065d3d5de8cc --form device_id=ABC123 --form image=@/home/luciano/Imágenes/Varias/IMG_0701.JPG https://app.navstone.com/me/image
+
+/* PATCH me/image/as_main */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","image":236975}' https://app.navstone.com/me/image/as_main
+
+/* DELETE me/image */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","images":[236977,236978]}' https://app.navstone.com/me/image
+
+/* POST me/audio */ (Upload audio)
+curl -k --form 'client=bandmix' --form 'key=bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7' --form 'country=CA' --form 'token=c6fb640d771188cc3f9b065d3d5de8cc' --form 'device_id=ABC123' --form 'audio=@/home/luciano/Música/Supercombo/Supercombo - Amianto.mp3' --form 'title=Amianto' --form 'comment=Testing API audio upload' https://app.navstone.com/me/audio
+
+/* PATCH me/audio/AUDIO_ID */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/audio/35535
+
+/* PATCH me/audio/sort */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","sort":"asc","audios":["35590","35599","35600","35601","35602","35603","35604","35606","35607","35608","35609","35610","35611","35612"]}' https://app.navstone.com/me/audio/sort
+
+/* DELETE me/audio */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","audios":[236977,236978]}' https://app.navstone.com/me/audio
+
+/* PATCH me/soundcloud */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","soundcloud_user":"lgarciabes","soundcloud_playlist":0}' https://app.navstone.com/me/soundcloud
+
+/* GET me/soundcloud */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/soundcloud
+
+/* POST me/video */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","url":"https://www.youtube.com/watch?v=CrSi4zPDUNI","title":"API video test"}' https://app.navstone.com/me/video
+
+/* PATCH me/video/VIDEO_ID */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/video/14861
+
+/* DELETE me/video */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","videos":[236977,236978]}' https://app.navstone.com/me/video
+
+/* POST me/ads */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","ads":[1,3,5]}' https://app.navstone.com/me/ads
+
+/* PATCH me/featured */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/featured
+
+/* POST me/bookmarks */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","bookmarks":[654]}' https://app.navstone.com/me/bookmark
+
+/* GET me/bookmarks */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/bookmarks
+
+/* DELETE me/bookmark */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","bookmarks":[16567]}' https://app.navstone.com/me/bookmark
+
+/* PATCH me/email */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","email":"apitester@mail.com"}' https://app.navstone.com/me/email
+
+/* PATCH me/mailing */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","email_html":false,"email_matches_radius":100}' https://app.navstone.com/me/mailing
+
+/* PATCH me/sms */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","sms_messages":true,"phonecode":55,"phone":"(85) 98968-1119"}' https://app.navstone.com/me/sms
+
+/* GET me/audition */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/audition
+
+/* GET me/audition/limit */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/audition/limit
+
+/* GET me/auditions */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/auditions
+
+/* POST me/audition */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","instrument":5,"skill":2,"genres":[1,5], "search_mode":0, "region":2, "locality":"airdrie"}' https://app.navstone.com/me/audition
+
+/* PATCH me/audition/AUDITION_ID */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","email_notification":0,"status":1}' https://app.navstone.com/me/audition/331
+
+/* POST me/audition-status */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","audition_id":232,"status":1}' https://app.navstone.com/me/audition-status
+
+/* DELETE me/audition/AUDITION_ID/matches */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","matches":[1,2]}' https://app.navstone.com/me/audition/331/matches
+
+/* DELETE me/audition/AUDITION_ID */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/audition/331
+
+/* GET me/auditions/invitations */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/auditions/invitations
+
+/* PATCH me/audition/AUDITION_ID/invitation */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/audition/1/invitation
+
+/* POST me/hidden */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","hidden":[123,456]}' https://app.navstone.com/me/hidden
+
+/* GET me/hidden */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/hidden
+
+/* DELETE me/hidden */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","hidden":[123]}' https://app.navstone.com/me/hidden
+
+/* GET me/billing */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/billing
+
+/* PATCH me/billing */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","arb":false}' https://app.navstone.com/me/billing
+
+/* GET me/dashboard */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/dashboard
+
+/* PATCH me/dashboard */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","show_new_matches":false,"matches_radius":50}' https://app.navstone.com/me/dashboard
+
+/* PATCH me/password */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","password":"opa"}' https://app.navstone.com/me/password
+
+/* PATCH me/privacy */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","show_profile":false}' https://app.navstone.com/me/privacy
+
+/* GET me/mailbox */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/mailbox
+
+/* GET me/mailbox/MESSAGE_ID */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/mailbox/115726
+
+/* GET me/mailbox/archive */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/mailbox/archive
+
+/* GET me/mailbox/archive/MESSAGE_ID */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/mailbox/archive/115721
+
+/* GET me/mailbox/sent */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/mailbox/sent
+
+/* GET me/mailbox/sent/MESSAGE_ID */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/mailbox/sent/115721
+
+/* GET me/mailbox/trash */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/mailbox/trash
+
+/* GET me/mailbox/trash/MESSAGE_ID */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/mailbox/trash/115721
+
+/* GET me/mailbox/spam */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/mailbox/spam
+
+/* GET me/mailbox/spam/MESSAGE_ID */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/mailbox/spam/115721
+
+/* POST me/mailbox */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","recipient":222,"subject":"APP API test","message":"Just testing the API for the APP"}' https://app.navstone.com/me/mailbox
+
+/* GET me/fields */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/fields
+
+/* GET me/memberships */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/memberships
+
+/* POST me/payment_method */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","first_name":"Jhon","last_name":"Doe","card_num":"6011000000000012","exp_date_month":12,"exp_date_year":20,"card_code":"000"}' https://app.navstone.com/me/payment_method
+
+/* GET me/payment_methods */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/payment_methods
+
+/* DELETE me/payment_methods */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","payment_methods":[3475,3476,3477]}' https://app.navstone.com/me/payment_methods
+
+/* GET me/coupon/COUPON_ID */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/coupon/BMAPI
+
+/* POST me/checkout */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","checkout_type":"membership","membership":5,"payment_method":"new","first_name":"Jhon","last_name":"Doe","card_num":"6011000000000012","exp_date_month":12,"exp_date_year":20,"card_code":"000"}' https://app.navstone.com/me/checkout
+
+/* GET me/calendar */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/calendar
+
+/* POST me/calendar */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","year":2018,"month":12,"day":11,"hour":20,"minutes":15,"title":"API test","description":"Testing the API events creation"}' https://app.navstone.com/me/calendar
+
+/* GET me/calendar/EVENT_ID */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/calendar/5991
+
+/* PATCH me/calendar/EVENT_ID */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","show_new_matches":false,"matches_radius":50}' https://app.navstone.com/me/dashboard
+
+/* DELETE me/calendar */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","events":[5991]}' https://app.navstone.com/me/calendar
+
+/* GET browse */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/browse
+
+/* GET cities/STATE_ID */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/cities/5
+
+/* GET browse/STATE_ID */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/browse/5
+
+/* GET user/USER_ID */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/user/66727
+
+/* POST flag */
+curl -k -H "Content-Type: application/json" -X POST -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","flag":654}' https://app.navstone.com/flag
+
+/* GET results */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/results
+
+/* GET me/searches */
+curl -k -H "Content-Type: application/json" -X GET -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me/searches
+
+/* DELETE me/search */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123","searches":[294]}' https://app.navstone.com/me/search
+
+/* DELETE me */
+curl -k -H "Content-Type: application/json" -X DELETE -d '{"client":"bandmix","key":"bgxcWNKX5LqRaiiC73xI1nQJCKvK2FC7","country":"CA","token":"c6fb640d771188cc3f9b065d3d5de8cc","device_id":"ABC123"}' https://app.navstone.com/me

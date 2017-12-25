@@ -1,0 +1,53 @@
+/**
+ * GET voucher listing
+ * Retrieves valid vouchers for given email (used and expired won't be in the retrieved list)
+ *
+ * Parameters:
+ * entity = type of entity to retrieve (listing)
+ * email = recipient's email
+ * page = number of page to retrieve (optional, default = 1)
+ * results = number fo results to retrieve (optional, default = 100)
+ *
+ * Response:
+ * vouchers = [
+ *      code = voucher code
+ *      offer = offer name
+ *      discount = voucher discount
+ *      expiration = voucher expiration date (yyyy-mm-dd)
+ * ]
+ */
+curl -k -H "Content-Type: application/json" -X GET -d '{"entity" : "listing","email":"pepe@sanchez.com"}' http://35.163.165.1/api/
+
+/**
+ * GET voucher
+ * Retrieves voucher information
+ *
+ * Parameters:
+ * entity = type of entity to retrieve (voucher)
+ * email = recipient's email
+ * code = voucher code
+ *
+ * Response:
+ * code = voucher code
+ * offer = offer name
+ * discount = voucher discount
+ * expiration = voucher expiration date (yyyy-mm-dd)
+ * used = date in which it was used (NULL if not used)
+ */
+curl -k -H "Content-Type: application/json" -X GET -d '{"entity" : "voucher","email":"pepe@sanchez.com","code":"8f46768c43"}' http://35.163.165.1/api/
+
+/**
+ * PATCH voucher
+ * Use voucher updating it's used date
+ *
+ * Parameters:
+ * entity = type of entity to retrieve (voucher)
+ * email = recipient's email
+ * code = voucher code
+ *
+ * Response:
+ * code = voucher code
+ * discount = voucher discount
+ * used = date in which it was used
+ */
+curl -k -H "Content-Type: application/json" -X PATCH -d '{"entity":"voucher","email":"pepe@sanchez.com","code":"e1d6a3ade0"}' http://35.163.165.1/api/
